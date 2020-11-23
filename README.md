@@ -3,8 +3,19 @@
 
 
 
-![alt text](https://github.com/eth-man/i3blocks-ticker/blob/master/example-images/status.png)
+![alt text](images/status.png)
 
-![alt text](https://github.com/eth-man/i3blocks-ticker/blob/master/example-images/config.png)
 
-![alt text](https://github.com/eth-man/i3blocks-ticker/blob/master/example-images/dunst.png)
+## how to use:
+command=ticker.sh (StockName) (BuyPrice) (AmountOfShares)
+![alt text2](images/config.png)
+
+right mouse click will show this:
+
+![alt text2](images/dunst.png)
+
+middle click will execute as below 
+```
+ $BROWSER "https://finance.yahoo.com/quote/$symbol";;
+```
+
