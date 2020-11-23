@@ -14,7 +14,7 @@ right mouse click will show this:
 
 ![alt text2](images/dunst.png)
 
-middle click will default web browser with the below 
+middle click will execute as below 
 ```
  $BROWSER "https://finance.yahoo.com/quote/$symbol";;
 ```
