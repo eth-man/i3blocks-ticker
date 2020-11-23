@@ -3,6 +3,6 @@
 
 
 
-![alt text](https://github.com/eth-man/i3blocks-ticker/blob/master/status.png)
-![alt text](https://github.com/eth-man/i3blocks-ticker/blob/master/config.png)
-![alt text](https://github.com/eth-man/i3blocks-ticker/blob/master/dunst.png)
+![alt text](https://github.com/eth-man/i3blocks-ticker/blob/master/example-images/status.png)
+![alt text](https://github.com/eth-man/i3blocks-ticker/blob/master/example-images/config.png)
+![alt text](https://github.com/eth-man/i3blocks-ticker/blob/master/example-images/dunst.png)
