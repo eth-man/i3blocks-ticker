@@ -7,6 +7,7 @@ LC_NUMERIC=C
 SYMBOLS=$1
 purchprice=$2
 stocks=$3
+warning=$4
 
 if ! $(type jq > /dev/null 2>&1); then
   echo "'jq' is not in the PATH. (See: https://stedolan.github.io/jq/)"
@@ -14,7 +15,7 @@ if ! $(type jq > /dev/null 2>&1); then
 fi
 
 if [ -z "$SYMBOLS" ]; then
-	echo "Usage: ./ticker.sh AAPL (buy price) (amount of stocks) (notify high) (notify low)"
+	echo "Usage: ./ticker.sh AAPL (buy price) (amount of stocks) (notify high) (notify low) <warn>"
   exit
 fi
 
@@ -129,13 +130,15 @@ echo " "
 
 
 
-  #todo: calculate the total money loose stocks * price
-#number of stock you buy
-#stocks=40
-  # echo 119.01 111.99 | awk '{printf "%.2f", $stocks*(${price}/${purchprice)}'
+# Notify if you loosing money, 5000 means 5 second make sure you using same time in i3blocks conf
+  if [ "$warning" = "warn" ]; then
+	if ( echo "$percentP" | grep -q ^- ); then
+	pgrep -x dunst >/dev/null && notify-send -t 5000 "🤑 Stocks Puller Notify" "\- $( printf "Warning - %s buy change has reachd to %s" $symbol $percentP)"
+fi
+  fi
 
 case $BLOCK_BUTTON in
-    #1) $TERMINAL -e less -S "$HOME/.local/share/weatherreport" ;;
+    #1) ;;
     2) $BROWSER "https://finance.yahoo.com/quote/$symbol";;
     3) pgrep -x dunst >/dev/null && notify-send -t 15000 "🤑 Stocks Puller" "\- $( printf "%-1s current Price %1.2f USD" $symbol $price)
 - $(printf "Pre Close    %s$" $preclose)
