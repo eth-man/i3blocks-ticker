@@ -9,6 +9,10 @@ purchprice=$2
 stocks=$3
 warning=$4
 
+
+FILE="$HOME/.local/bin/statusbar/ticker.enabled"
+if [ -f "$FILE" ]; then
+
 if ! $(type jq > /dev/null 2>&1); then
   echo "'jq' is not in the PATH. (See: https://stedolan.github.io/jq/)"
   exit 1
@@ -151,3 +155,9 @@ esac
 
 
 done
+
+
+else
+#	file not exist script will not run
+	echo ""
+fi
