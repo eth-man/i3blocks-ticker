@@ -19,7 +19,12 @@ if ! $(type jq > /dev/null 2>&1); then
 fi
 
 if [ -z "$SYMBOLS" ]; then
-	echo "Usage: ./ticker.sh AAPL (buy price) (amount of stocks) (notify high) (notify low) <warn>"
+	echo "Usage: ./ticker.sh (Stock symbol) (buy price) (amount of stocks) <warn>
+
+	Stock Symbol - check stock symbol at yahoo finance
+	buy price - stock purchase price
+	amount of stocks - the amout of stocks you have
+	warn - Alert when the price is lower than the purchase price"
   exit
 fi
 
